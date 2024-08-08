@@ -1,24 +1,29 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import ServiceCard from '../components/ServiceCard';
+import '../styles/SearchCategory.scss';
 
 const services = [
-  { title: 'House Cleaning', description: 'Detailed house cleaning', category: 'Cleaning' },
-  { title: 'Washing Clothes', description: 'Professional laundry service', category: 'Cleaning' },
-  { title: 'Bathroom Cleaning', description: 'Bathroom cleaning service', category: 'Cleaning' },
-  { title: 'Floor Cleaning', description: 'Floor cleaning service', category: 'Cleaning' },
-  { title: 'House Repairing', description: 'House repair service', category: 'Repair' },
+  { title: 'Cleaning', icon: 'https://openui.fly.dev/openui/24x24.svg?text=🧼' },
+  { title: 'Repair', icon: 'https://openui.fly.dev/openui/24x24.svg?text=🔧' },
+  { title: 'Painting', icon: 'https://openui.fly.dev/openui/24x24.svg?text=🎨' },
+  { title: 'Shifting', icon: 'https://openui.fly.dev/openui/24x24.svg?text=🚚' },
+  { title: 'Plumbing', icon: 'https://openui.fly.dev/openui/24x24.svg?text=🚰' },
+  { title: 'Electric', icon: 'https://openui.fly.dev/openui/24x24.svg?text=⚡' },
 ];
 
 const SearchCategory = () => {
   const { category } = useParams();
-  const filteredServices = services.filter(service => service.category.toLowerCase() === category.toLowerCase());
+  const filteredServices = services.filter(service => service.title.toLowerCase() === category.toLowerCase());
 
   return (
     <div className="search-category">
-      {filteredServices.map(service => (
-        <ServiceCard key={service.title} service={service} />
-      ))}
+      <h1>Results for "{category}"</h1>
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+        {filteredServices.map(service => (
+          <ServiceCard key={service.title} service={service} />
+        ))}
+      </div>
     </div>
   );
 };
