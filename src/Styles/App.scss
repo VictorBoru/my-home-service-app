@@ -1,0 +1,61 @@
+@import './Topbar';
+@import './SearchBar';
+@import './ServiceCard';
+
+$background: #f8f9fa;
+$primary: #6c63ff;
+$primary-foreground: #ffffff;
+$secondary: #8a65df;
+$border: #e0e0e0;
+$card: #ffffff;
+$muted: #6c757d;
+$muted-foreground: #495057;
+
+.bg-background {
+  background-color: $background;
+}
+
+.text-primary {
+  color: $primary;
+}
+
+.text-secondary {
+  color: $secondary;
+}
+
+.text-muted {
+  color: $muted;
+}
+
+.text-muted-foreground {
+  color: $muted-foreground;
+}
+
+.bg-primary {
+  background-color: $primary;
+}
+
+.text-primary-foreground {
+  color: $primary-foreground;
+}
+
+.bg-card {
+  background-color: $card;
+}
+
+.border-border {
+  border-color: $border;
+}
+
+a {
+  color: $muted;
+  text-decoration: none;
+
+  &:hover {
+    color: $muted-foreground;
+  }
+}
+
+button {
+  cursor: pointer;
+}
