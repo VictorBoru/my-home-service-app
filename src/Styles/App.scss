@@ -59,3 +59,9 @@ a {
 button {
   cursor: pointer;
 }
+
+h1, p {
+  max-width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
